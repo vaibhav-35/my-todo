@@ -41,7 +41,7 @@ function rendertodo(val,currsize)
         templi.id=currsize;
         var delbtn = document.createElement('span');
         delbtn.classList.add('libtn');
-        delbtn.innerHTML+=' <img class="donebtn" src="done.jpg" height="25px" title="Task Done">  <img  class ="dltbtn" src="delete.jpg" height="25px" title="Delete Item">';
+        delbtn.innerHTML+='<img class="updatebtn" src="update.png title="Update Item"> <img class="donebtn" src="done.jpg" height="25px" title="Task Done">  <img  class ="dltbtn" src="delete.jpg" height="25px" title="Delete Item">';
 
         
         let txt=document.createTextNode(val);
@@ -57,5 +57,17 @@ function update(e)
         this.style.display='none';
         let idname= this.id
         localStorage.removeItem(idname)
+    }
+    console.log(this)
+    if(e.target.classList=='donebtn')
+    {
+        console.log(this)
+        if(this.classList=='strike')
+        {
+            this.classList.remove('strike');
+        }
+        else{
+            this.classList.add('strike');
+        }
     }
 }
