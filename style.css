@@ -84,8 +84,6 @@ img:hover
 {
     transform: scale(1.16);
 }
-
-.strike
-{
+.strike{
     text-decoration: line-through;
 }
