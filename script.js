@@ -4,6 +4,7 @@ const input = document.querySelector('#input-val');
 const addbtn= document.querySelector(".btn");
 
 addbtn.addEventListener('click',addtodo);
+document.addEventListener('keydown',enterKeyPress);
 
 
 
@@ -17,6 +18,12 @@ window.onload=function(){
         if(localStorage.getItem(key))
             rendertodo(localStorage.getItem(key),key)   
     }
+}
+
+function enterKeyPress(e)
+{
+    if(e.which=='13')
+    addtodo();
 }
 function addtodo()
 {
@@ -34,7 +41,7 @@ function rendertodo(val,currsize)
         templi.id=currsize;
         var delbtn = document.createElement('span');
         delbtn.classList.add('libtn');
-        delbtn.innerHTML+=' <img class="donebtn" src="done.jpg" height="25px">  <img  class ="dltbtn" src="delete.jpg" height="25px">';
+        delbtn.innerHTML+=' <img class="donebtn" src="done.jpg" height="25px" title="Task Done">  <img  class ="dltbtn" src="delete.jpg" height="25px" title="Delete Item">';
 
         
         let txt=document.createTextNode(val);
