@@ -49,7 +49,9 @@ function rendertodo(val,currsize)
         templi.appendChild(delbtn);
         list.appendChild(templi);
         templi.addEventListener('click',update);
-}
+
+        input.value='';}
+
 function update(e)
 {
     if(e.target.classList=='dltbtn')
